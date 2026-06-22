@@ -1,0 +1,20 @@
+# Build output
+workspace/
+Build/
+*.AML
+DSDT.AML
+
+# Boot images / packaging artifacts
+*.img
+*.fd
+*.fd.gz
+*.gz
+*.bin
+bootpayload.bin
+zImage
+mmcblk0p16
+
+# Editor / OS noise
+*.swp
+*~
+.DS_Store

@@ -1,0 +1,32 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = Msm8916UsbDxe
+  FILE_GUID                      = 12345678-1234-1234-1234-123456789abc
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = Msm8916UsbDxeInitialize
+
+[Sources.common]
+  Msm8916UsbDxe.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+  MSM8916Pkg/MSM8916Pkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  UefiBootServicesTableLib
+  DebugLib
+  IoLib
+  NonDiscoverableDeviceRegistrationLib
+
+[Protocols]
+  gQcomClockProtocolGuid
+  gQcomRpmProtocolGuid
+  gQcomPm8x41ProtocolGuid
+
+[Depex]
+  gQcomClockProtocolGuid
+  AND gQcomRpmProtocolGuid

@@ -1,0 +1,37 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = DisplayDxe
+  FILE_GUID                      = 426BA457-ACCA-4CC9-98A8-0E7C309C861B
+  MODULE_TYPE                    = DXE_DRIVER
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = DisplayDxeInitialize
+
+[Sources.common]
+  DisplayDxe.c
+  mdp5.c
+  mipi_dsi.c
+  mipi_dsi_phy.c
+  mipi_dsi_autopll.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ArmPkg/ArmPkg.dec
+  MSM8916Pkg/MSM8916Pkg.dec
+
+[LibraryClasses]
+  UefiDriverEntryPoint
+  MemoryAllocationLib
+  BaseMemoryLib
+  DebugLib
+  IoLib
+  TimerLib
+  CacheMaintenanceLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+
+[Protocols]
+  gQcomClockProtocolGuid
+  gQcomI2cQupProtocolGuid
+
+[Depex]
+  gQcomI2cQupProtocolGuid
