@@ -25,7 +25,8 @@ jobs:
    #     sudo apt-get install --install-recommends winehq-stable libsdl2-2.0-0 libsdl2-dev  build-essential uuid-dev clang llvm iasl nasm gcc-aarch64-linux-gnu abootimg python3-pil python3-git gettext libgcc-s1:i386 libstdc++6:i386  -y
     - name: Prepare environment
       run: |
-        sudo apt install python3 python2 gcc-aarch64-linux-gnu wine32
+        sudo apt update
+        sudo apt install python3 python2 gcc-aarch64-linux-gnu wine
         #sudo rm /bin/python
         #sudo ln -s /bin/python2.7 /bin/python
           
