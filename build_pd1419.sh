@@ -23,7 +23,7 @@ GCC5_AARCH64_PREFIX=aarch64-linux-gnu- build -s -n 4 -a AARCH64 -t GCC5 -p MSM89
 
 # ---- Paketle: fastboot boot imaji (kerneladdr, MSM8916Pkg.fdf BaseAddress 0x80080000 ile ayni) ----
 cd BootShim
-make make REQUIRES_KERNEL_HEADER=0 FD_BASE=0x80080000 FD_SIZE=0x00200000
+make REQUIRES_KERNEL_HEADER=0 FD_BASE=0x80080000 FD_SIZE=0x00200000
 cd -
 FD=workspace/Build/MSM8916Pkg/DEBUG_GCC5/FV/MSM8916PKG_UEFI.fd
 DTB="${DTB:-MSM8916Pkg/pd1419.dtb}"           # repo-ici pd1419 DTB (override: DTB=/yol ./build.sh)
