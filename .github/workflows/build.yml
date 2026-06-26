@@ -26,7 +26,7 @@ jobs:
     - name: Prepare environment
       run: |
         sudo apt update
-        sudo apt install python3 python2 gcc-aarch64-linux-gnu wine
+        sudo apt install python3 python2 gcc-aarch64-linux-gnu wine llvm
         #sudo rm /bin/python
         #sudo ln -s /bin/python2.7 /bin/python
           
