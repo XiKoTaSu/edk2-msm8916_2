@@ -22,11 +22,8 @@ mv DSDT.AML MSM8916Pkg/AcpiTables/DSDT.AML
 GCC5_AARCH64_PREFIX=aarch64-linux-gnu- build -s -n 4 -a AARCH64 -t GCC5 -p MSM8916Pkg/Devices/pd1419.dsc
 
 # ---- Paketle: fastboot boot imaji (kerneladdr, MSM8916Pkg.fdf BaseAddress 0x80080000 ile ayni) ----
-FD_BASE=0x80080000
-FD_SIZE=0x00200000
-REQUIRES_KERNEL_HEADER=0
 cd BootShim
-make
+make make REQUIRES_KERNEL_HEADER=0 FD_BASE=0x80080000 FD_SIZE=0x00200000
 cd -
 FD=workspace/Build/MSM8916Pkg/DEBUG_GCC5/FV/MSM8916PKG_UEFI.fd
 DTB="${DTB:-MSM8916Pkg/pd1419.dtb}"           # repo-ici pd1419 DTB (override: DTB=/yol ./build.sh)
